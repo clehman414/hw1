@@ -141,12 +141,66 @@ CREATE TABLE main_characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT;
     character_name TEXT;
     movie_id TEXT;
-    studio_id TEXT
+    actor_id TEXT
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO movies (
+    movie_title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
+    ("Batman Begins", "2005", "PG-13", 1),
+    ("The Dark Knight", "2008", "PG-13", 1),
+    ("The Dark Knight Rises", "2012", "PG-13", 1)
+);
+
+INSERT INTO studio (
+    studio_name
+) VALUES (
+    "Warner Bros."
+);
+
+INSERT INTO actors (
+    actor_name
+) VALUES (
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway")
+);
+
+INSERT INTO main_characters (
+    character_name,
+    movie_id,
+    actor_id
+) VALUES (
+    ("Bruce Wayne", 1, 1)
+    ("Bruce Wayne", 2, 1)
+    ("Bruce Wayne", 3, 1)
+    ("Alfred", 1, 2)
+    ("Alfred", 2, 2)
+    ("Ra's Al Ghul", 1, 3)
+    ("Rachel Dawes", 1, 4)
+    ("Rachel Dawes", 2, 8)
+    ("Commissioner Gordon", 1, 5)
+    ("Commissioner Gordon", 3, 5)
+    ("Joker", 2, 6)
+    ("Harvey Dent", 2, 7)
+    ("Bane", 3, 9)
+    ("John Blake", 3, 10)
+    ("Selina Kyle", 3, 11)
+);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -156,6 +210,7 @@ CREATE TABLE main_characters (
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT 
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
