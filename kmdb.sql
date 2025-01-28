@@ -323,7 +323,7 @@ INSERT INTO roles (
 -- TODO!
 SELECT movies.movie_title, movies.year, movies.mpaa_rating, studios.studio_name 
 FROM movies
-INNER JOIN studios ON movies.studio_id = studios.id
+INNER JOIN studios ON movies.studio_id = studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -333,3 +333,7 @@ INNER JOIN studios ON movies.studio_id = studios.id
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT movies.movie_title, actors.actor_name, roles.character_name
+FROM roles
+INNER JOIN movies ON movies.id = roles.movie_id
+INNER JOIN actors ON actors.id = roles.actor_id;
