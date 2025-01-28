@@ -176,7 +176,7 @@ INSERT INTO studios (
     studio_name
 ) VALUES (
     "Warner Bros."
-)
+);
 
 INSERT INTO actors (
     actor_name
