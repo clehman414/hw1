@@ -115,32 +115,32 @@
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS studios;
 DROP TABLE IF EXISTS actors;
-DROP TABLE IF EXISTS main_characters;
+DROP TABLE IF EXISTS roles;
 
 -- Create new tables, according to your domain model
 -- TODO!
 CREATE TABLE movies (
-    id INTEGER PRIMARY KEY AUTOINCREMENT;
-    movie_title TEXT;
-    year TEXT;
-    mpaa_rating TEXT;
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    year TEXT,
+    mpaa_rating TEXT,
     studio_id TEXT
 );
 
 CREATE TABLE studios (
-    id INTEGER PRIMARY KEY AUTOINCREMENT;
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT
 );
 
 CREATE TABLE actors (
-    id INTEGER PRIMARY KEY AUTOINCREMENT;
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT
 );
 
-CREATE TABLE main_characters (
-    id INTEGER PRIMARY KEY AUTOINCREMENT;
-    character_name TEXT;
-    movie_id TEXT;
+CREATE TABLE roles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_name TEXT,
+    movie_id TEXT,
     actor_id TEXT
 );
 
@@ -153,53 +153,86 @@ INSERT INTO movies (
     mpaa_rating,
     studio_id
 ) VALUES (
-    ("Batman Begins", "2005", "PG-13", 1),
-    ("The Dark Knight", "2008", "PG-13", 1),
+    ("Batman Begins", "2005", "PG-13", 1)
+);
+INSERT INTO movies (
+    movie_title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
+    ("The Dark Knight", "2008", "PG-13", 1)
+);
+INSERT INTO movies (
+    movie_title,
+    year,
+    mpaa_rating,
+    studio_id
+) VALUES (
     ("The Dark Knight Rises", "2012", "PG-13", 1)
 );
 
-INSERT INTO studio (
+INSERT INTO studios (
     studio_name
 ) VALUES (
     "Warner Bros."
-);
+)
 
 INSERT INTO actors (
     actor_name
-) VALUES (
-    ("Christian Bale"),
-    ("Michael Caine"),
-    ("Liam Neeson"),
-    ("Katie Holmes"),
-    ("Gary Oldman"),
-    ("Heath Ledger"),
-    ("Aaron Eckhart"),
-    ("Maggie Gyllenhaal"),
-    ("Tom Hardy"),
-    ("Joseph Gordon-Levitt"),
-    ("Anne Hathaway")
-);
+) VALUES
+    ("Christian Bale");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Michael Caine");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Liam Neeson");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Katie Holmes");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Gary Oldman");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Heath Ledger");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Aaron Eckhart");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Maggie Gyllenhaal");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Tom Hardy");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Joseph Gordon-Levitt");
+INSERT INTO actors (
+    actor_name
+) VALUES ("Anne Hathaway");
 
-INSERT INTO main_characters (
+INSERT INTO roles (
     character_name,
     movie_id,
     actor_id
 ) VALUES (
-    ("Bruce Wayne", 1, 1)
-    ("Bruce Wayne", 2, 1)
-    ("Bruce Wayne", 3, 1)
-    ("Alfred", 1, 2)
-    ("Alfred", 2, 2)
-    ("Ra's Al Ghul", 1, 3)
-    ("Rachel Dawes", 1, 4)
-    ("Rachel Dawes", 2, 8)
-    ("Commissioner Gordon", 1, 5)
-    ("Commissioner Gordon", 3, 5)
-    ("Joker", 2, 6)
-    ("Harvey Dent", 2, 7)
-    ("Bane", 3, 9)
-    ("John Blake", 3, 10)
-    ("Selina Kyle", 3, 11)
+    ("Bruce Wayne", 1, 1),
+    ("Bruce Wayne", 2, 1),
+    ("Bruce Wayne", 3, 1),
+    ("Alfred", 1, 2),
+    ("Alfred", 2, 2),
+    ("Ra's Al Ghul", 1, 3),
+    ("Rachel Dawes", 1, 4),
+    ("Rachel Dawes", 2, 8),
+    ("Commissioner Gordon", 1, 5),
+    ("Commissioner Gordon", 3, 5),
+    ("Joker", 2, 6),
+    ("Harvey Dent", 2, 7),
+    ("Bane", 3, 9),
+    ("John Blake", 3, 10),
+    ("Selina Kyle", 3, 11),
 );
 
 -- Prints a header for the movies output
